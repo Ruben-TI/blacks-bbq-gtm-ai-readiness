@@ -54,14 +54,19 @@ Implemented a `Consent Initialization` tag that fires before all other tags, set
 
 **Rich Results Test — Austin Location (live)**
 
-The BBQRestaurant schema tag is confirmed live on `https://www.blacksbbq.com/locations/austin`. Google's validator detects the entity with all fields correctly populated: name, address, phone, cuisine type, price range, and hours — all pulled dynamically from the GTM variables.
+The `BBQRestaurant` schema tag is confirmed live on `https://www.blacksbbq.com/locations/austin`. Google's validator detects the entity with all fields correctly populated: name, address, phone, cuisine type, price range, and hours — all pulled dynamically from the GTM variables.
 
-> *Screenshots: Rich Results Test validation | BBQRestaurant entity detail (address + hours confirmed) | Menu entity | FAQPage entity*
+![Rich Results Test — 3 valid items detected](./Screenshots/rich-results-test-main.png)
 
-**Note on the `@type` validator error:** The Rich Results Test flags `BBQRestaurant` as "not a recognized schema.org type" (1 ERROR). The data itself is valid — this is a type declaration issue. `BBQRestaurant` is an informal schema.org subtype that strict validators don't formally recognize. The correct fix is `@type: ["Restaurant", "BBQRestaurant"]`. The GTM tag is no longer accessible to apply this fix, but the entity data feeds correctly to Google's crawlers and the page passes rich result eligibility.
+![BBQRestaurant entity — address, phone, hours confirmed](./Screenshots/bbqrestaurant-entity.png)
 
-**Additional schema on the page (pre-existing, not GTM-added):**
-The Austin location page also has `Menu`, `FAQPage`, and `Product/AggregateRating` schema from the website's CMS — separate from the GTM implementation. The site registered 3 valid rich result items total (Product snippets + Review snippets) in the same test.
+![Menu entity — 0 errors, 0 warnings](./Screenshots/menu-entity.png)
+
+![FAQPage entity — 0 errors, 0 warnings](./Screenshots/faqpage-entity.png)
+
+> **Note on the `@type` validator error:** The Rich Results Test flags `BBQRestaurant` as "not a recognized schema.org type" (1 ERROR). The data itself is valid — this is a type declaration issue. The correct pattern is `@type: ["Restaurant", "BBQRestaurant"]` which explicitly declares the parent type. See "What I Learned" below.
+
+> **Note on additional schema:** The Austin location page also has `Menu`, `FAQPage`, and `Product/AggregateRating` schema from the website's CMS — separate from the GTM implementation. The page registered 3 valid rich result items total (Product snippets + Review snippets).
 
 📊 [View the Looker Studio Dashboard (April 2026)](./References/Original_Black's_BBQ_Dashboard.pdf)
 
