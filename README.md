@@ -56,19 +56,19 @@ Implemented a `Consent Initialization` tag that fires before all other tags, set
 
 The `BBQRestaurant` schema tag is confirmed live on `https://www.blacksbbq.com/locations/austin`. Google's validator detects the entity with all fields correctly populated: name, address, phone, cuisine type, price range, and hours — all pulled dynamically from the GTM variables.
 
-![Rich Results Test — 3 valid items detected](./Screenshots/rich-results-test-main.png)
+![Rich Results Test — 3 valid items detected](./Screenshots/rich-results-test-main.png.png)
 
-![BBQRestaurant entity — address, phone, hours confirmed](./Screenshots/bbqrestaurant-entity.png)
+![BBQRestaurant entity — address, phone, hours confirmed](./Screenshots/bbqrestaurant-entity.png.png)
 
-![Menu entity — 0 errors, 0 warnings](./Screenshots/menu-entity.png)
+![Menu entity — 0 errors, 0 warnings](./Screenshots/menu-entity.png.png)
 
-![FAQPage entity — 0 errors, 0 warnings](./Screenshots/faqpage-entity.png)
+![FAQPage entity — 0 errors, 0 warnings](./Screenshots/faqpage-entity.png.png)
 
 > **Note on the `@type` validator error:** The Rich Results Test flags `BBQRestaurant` as "not a recognized schema.org type" (1 ERROR). The data itself is valid — this is a type declaration issue. The correct pattern is `@type: ["Restaurant", "BBQRestaurant"]` which explicitly declares the parent type. See "What I Learned" below.
 
 > **Note on additional schema:** The Austin location page also has `Menu`, `FAQPage`, and `Product/AggregateRating` schema from the website's CMS — separate from the GTM implementation. The page registered 3 valid rich result items total (Product snippets + Review snippets).
 
-📊 [View the Looker Studio Dashboard (April 2026)] https://drive.google.com/file/d/12nNRPNBkCKdQ2pcR2j-OSNjIryDj1JwK/view?usp=sharing
+📊 [View the Looker Studio Dashboard (April 2026)](https://drive.google.com/file/d/12nNRPNBkCKdQ2pcR2j-OSNjIryDj1JwK/view?usp=sharing)
 
 > *The dashboard tracks the Google Ads account performance that this GTM implementation supports — including conversion data flowing through the Enhanced Conversions pipeline.*
 
