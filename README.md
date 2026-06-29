@@ -68,7 +68,7 @@ The `BBQRestaurant` schema tag is confirmed live on `https://www.blacksbbq.com/l
 
 > **Note on additional schema:** The Austin location page also has `Menu`, `FAQPage`, and `Product/AggregateRating` schema from the website's CMS — separate from the GTM implementation. The page registered 3 valid rich result items total (Product snippets + Review snippets).
 
-📊 [View the Looker Studio Dashboard (April 2026)](./Original_Black's_BBQ_Dashboard.pdf)
+📊 [View the Looker Studio Dashboard (April 2026)](.Original_Black's_BBQ_Dashboard.pdf)
 
 > *The dashboard tracks the Google Ads account performance that this GTM implementation supports — including conversion data flowing through the Enhanced Conversions pipeline.*
 
